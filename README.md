@@ -7,11 +7,11 @@
 `CT_PVAE` is a framework that uses self-supervised learning for computed tomography reconstruction from sparse sinograms (projection measurements). The framework is probabilisitic, inferring a prior distribution from sparse sinograms on a dataset of objects and calculating the posterior for the object reconstruction on each sinogram.
 
 # Overview
-The figure below shows the overview of the end-to-end `CT-VAE` pipeline.
+The figure below shows the overview of the end-to-end `CT_PVAE` pipeline.
 
 <p align="center"><img src="figures/full_vae.png" width=700 /></p>
 
-The main algorithm comprising the `CT-VAE` is inspired by the variational autoencoder. This repository allows creation of synthetic object datasets and generation of corresponding noisy, sparse sinograms. Object reconstruction from the sparse sinograms is performed with the physics-informed variational autoencoder. Code is included for visualization and comparison of results.  
+The main algorithm comprising the `CT_PVAE` is inspired by the variational autoencoder. This repository allows creation of synthetic object datasets and generation of corresponding noisy, sparse sinograms. Object reconstruction from the sparse sinograms is performed with the physics-informed variational autoencoder. Code is included for visualization and comparison of results.  
 
 # Table of contents
 1. [Installation](#Installation)
