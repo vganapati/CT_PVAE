@@ -4,7 +4,7 @@
 ----
 ![Crates.io](https://img.shields.io/crates/l/Ap?color=black)
 
-`CT_VAE` is a framework that uses self-supervised learning for computed tomography reconstruction from sparse sinograms (projection measurements). The framework is probabilisitic, inferring a prior distribution from sparse sinograms on a dataset of objects and calculating the posterior for the object reconstruction on each sinogram.
+`CT_PVAE` is a framework that uses self-supervised learning for computed tomography reconstruction from sparse sinograms (projection measurements). The framework is probabilisitic, inferring a prior distribution from sparse sinograms on a dataset of objects and calculating the posterior for the object reconstruction on each sinogram.
 
 # Overview
 The figure below shows the overview of the end-to-end `CT-VAE` pipeline.
@@ -27,13 +27,13 @@ The main algorithm comprising the `CT-VAE` is inspired by the variational autoen
 First, navigate to the folder where you want the repository and clone the repository:
 
 ```
-git clone https://github.com/vganapati/CT_VAE.git
+git clone https://github.com/vganapati/CT_PVAE.git
 ```
 
 Create a `conda` environment:
 
 ```
-cd CT_VAE
+cd CT_PVAE
 conda env create -f environment.yml
 conda activate CT
 ```
@@ -58,7 +58,7 @@ Activate your environment if not already activated:
 conda activate CT
 ```
 
-Navigate to the CT_VAE directory. 
+Navigate to the CT_PVAE directory. 
 Next, set your PYTHONPATH to include the current directory:
 
 ```
@@ -168,7 +168,7 @@ Activate your environment if not already activated:
 conda activate CT
 ```
 
-Navigate to the CT_VAE directory. 
+Navigate to the CT_PVAE directory. 
 Next, set your PYTHONPATH to include the current directory:
 
 ```
