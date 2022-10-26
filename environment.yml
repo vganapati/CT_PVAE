@@ -1,0 +1,10 @@
+name: CT
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8 
+  - tomopy=1.11.0
+  - xdesign=0.5.5
+  - tensorflow=2.8.1
+  - tensorflow-probability=0.14.0
+  - glob2=0.7

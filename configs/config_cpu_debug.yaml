@@ -1,0 +1,48 @@
+trainer: ctvae.main_ct_vae.main
+
+model:
+  trial : 8
+  library : tf
+  output_dir : save_path
+  train : True
+  visualize : True
+  input_path : dataset_foam
+  save_tag_masks: pnm1e3_angles10_random
+  use_normal : True
+  reconstruct : True
+  visualize : True
+  train : True
+  random : True
+  use_saved_masks : True
+
+prms:
+  nevals : 20
+  names  : [batch_size,num_feature_maps,kernel_size,stride_encoder,num_blocks,intermediate_layers,intermediate_kernel]
+  mult   : [        1,                1,          1,             1,         1,                  1,                  1]
+  xlow   : [        2,               18,          2,             1,         1,                  1,                  2]
+  xup    : [        6,               22,          6,             5,         5,                  5,                  6]
+  default:
+    poisson_noise_multiplier: 1000
+    num_iter: 100
+    truncate_dataset: 10
+    num_sparse_angles : 10
+  record : samples.txt
+
+hpo:
+  surrogate : rbf
+  loops     : 50
+  istop     : 100
+  
+dist:
+  sbatch:
+    constraint : haswell
+    account    : m3769
+    qos        : debug
+    job-name   : ctvae
+    time       : 20
+  node_type : cpu
+  backend   : mpi
+  nsteps    : 4
+  ntasks    : 8
+  split     : trial
+  conda     : CT_VAE

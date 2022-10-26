@@ -1,0 +1,44 @@
+trainer: ctvae.main_ct_vae.main
+
+model:
+  trial : 2
+  library : tf
+  output_dir : save_path
+  train : True
+  visualize : True
+  pixel_dist : True
+  input_path : dataset_toy_discrete2
+  use_normal : True
+  random : False
+  toy_masks : True
+  obj : numpy.nanmax(losses)
+
+prms:
+  nevals : 8
+  names  : [batch_size,num_feature_maps,kernel_size,stride_encoder,num_blocks,intermediate_layers,intermediate_kernel]
+  mult   : [         1,               1,          1,             1,         1,                  1,                  1]
+  xlow   : [         4,               1,          1,             1,         1,                  1,                  1]
+  xup    : [        16,              50,          6,             2,         10,                 10,                 6]
+  default:
+    poisson_noise_multiplier: 1000
+    num_iter: 20
+    truncate_dataset: 40
+    num_sparse_angles : 1
+    angles_per_iter : 2
+    no_pad : True
+    num_samples : 10
+    example_num : 0
+  record : samples.txt
+
+hpo:
+  surrogate : rbf
+  loops     : 50
+  istop     : 100
+
+dist:
+  node_type : gpu
+  backend   : nccl
+  nsteps    : 1
+  ntasks    : 1
+  split     : trial
+  conda     : CT_VAE2

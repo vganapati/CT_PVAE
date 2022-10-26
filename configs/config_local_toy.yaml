@@ -1,0 +1,35 @@
+trainer: ctvae.main_ct_vae.main
+
+model:
+  trial : 8
+  library : tf
+  output_dir : save_path
+  train : True
+  visualize : True
+  input_path : dataset_toy
+  use_normal : True
+  visualize : True
+  train : True
+  random : True
+
+prms:
+  nevals : 20
+  names  : [batch_size,num_feature_maps,kernel_size,stride_encoder,num_blocks,intermediate_layers,intermediate_kernel]
+  mult   : [        10,                1,          1,             1,         1,                  1,                  1]
+  xlow   : [         1,               18,          2,             1,         1,                  1,                  2]
+  xup    : [        10,               22,          6,             5,         5,                  5,                  6]
+  default:
+    poisson_noise_multiplier: 1000
+    num_iter: 100
+    truncate_dataset: 1000
+    num_sparse_angles : 1
+    angles_per_iter : 2
+    no_pad : True
+    num_samples : 10
+    example_num : 5
+  record : samples.txt
+
+hpo:
+  surrogate : rbf
+  loops     : 50
+  istop     : 100
