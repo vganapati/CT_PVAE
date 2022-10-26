@@ -1,4 +1,3 @@
-*/
 !bin/
 !ctvae/
 !scripts/
@@ -12,5 +11,4 @@
 scratch_pad.txt
 *.h5
 samples.txt
-*.png
 
