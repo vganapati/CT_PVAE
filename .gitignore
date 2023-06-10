@@ -12,3 +12,4 @@ scratch_pad.txt
 *.h5
 samples.txt
 figures/github_logo.png
+*.pyc
