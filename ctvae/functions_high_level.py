@@ -34,7 +34,6 @@ def create_dataset(N_PIXEL = 128,
     print('Dataset saved as ' + save_name + '.npy')
     return(x_train)
 
-
 def preformat_data(theta = np.linspace(0, np.pi, 20, endpoint=False), # projection angles
                    save_path = 'dataset_foam_test',
                    truncate_dataset = 100,

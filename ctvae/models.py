@@ -20,6 +20,7 @@ def find_conv_output_dim(input_length, stride, kernel_size):
     output_length = np.sum(output_length)  
     return output_length
 
+
 def create_encode_net(num_angles, # x dimension
                       num_proj_pix, # y dimension
                       num_feature_maps_vec,
@@ -106,7 +107,6 @@ def create_encode_net(num_angles, # x dimension
         model.summary()
     
     return(model, skips_pixel_x, skips_pixel_y, skips_pixel_z)
-
 
 
 def create_decode_net(skips_pixel_x,
@@ -215,7 +215,6 @@ def create_decode_net(skips_pixel_x,
     return(model)
 
 
-
 def periodic_padding(image, padding_tuple): # padding is added to beginnings and ends of x and y
     '''
     Create a periodic padding (wrap) around the image, to emulate periodic boundary conditions
@@ -225,8 +224,6 @@ def periodic_padding(image, padding_tuple): # padding is added to beginnings and
 
     image = tf.reshape(tf.range(30, dtype='float32'), shape=[5,6])
     padded_image = periodic_padding(image, padding=2)
-
-
     '''
     
     # XXX periodic boundary conditions coded here are not correct for sinograms
@@ -261,7 +258,6 @@ def periodic_padding(image, padding_tuple): # padding is added to beginnings and
         padded_image = tf.concat([padded_image, right_pad], axis=2)
         
     return padded_image
-
 
 
 def conv_block(x, # input
@@ -340,7 +336,6 @@ def conv_block(x, # input
         x = InstanceNormalization()(x)
 
     return(x)
-
 
 
 class InstanceNormalization(layers.Layer):

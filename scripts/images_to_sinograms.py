@@ -73,7 +73,7 @@ def main():
     
     np.save(save_path + '/x_train_sinograms.npy', x_train_sinograms)
     np.save(save_path + '/dataset_parameters.npy', np.array([theta,
-                                                   num_proj_pix], dtype = np.object))
+                                                   num_proj_pix], dtype = object))
 
     np.save(save_path + '/x_size.npy', x_train_imgs.shape[1]) # size of original image
     np.save(save_path + '/y_size.npy', x_train_imgs.shape[2]) # size of original image

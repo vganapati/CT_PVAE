@@ -226,6 +226,7 @@ class CT_VAE():
         if pixel_dist:
             self.pixel_dist(input_path=input_path,
                             **kwargs)
+            
     def create_dataset(self,input_path=None,save_path=None,truncate_dataset=100,batch_size=4, angles_per_iter=5,**kwargs):
 
         """

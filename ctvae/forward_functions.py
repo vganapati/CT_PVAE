@@ -45,7 +45,6 @@ def pad_phantom(phantom, dim = 3,
     phantom = tf.pad(phantom, paddings, "CONSTANT")
     return(phantom)
 
-
 def project_tf_low_mem(phantom,theta, pad = False):
     '''
     Parameters
@@ -121,5 +120,3 @@ def project_tf_fast(phantom,theta,pad = False, dim=3,
         sino = tf.expand_dims(sino, axis=-1)
         
     return(sino)
-
-

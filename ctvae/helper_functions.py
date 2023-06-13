@@ -29,7 +29,6 @@ def create_folder(save_path=None,**kwargs):
         if not os.path.isdir(save_path):
             raise
 
-
 def create_sinogram(img, theta, pad=True):
     # multiprocessing.freeze_support()
     phantom = np.expand_dims(img,axis=0)
@@ -168,7 +167,6 @@ def configure_for_performance(ds, batch_size,
     ds = ds.prefetch(buffer_size=autotune)
     return ds
 
-
 def create_coords(num_angles, # x-dimension
                   num_proj_pix, # y-dimension
                   batch_size,
@@ -199,7 +197,6 @@ def positive_range(x, offset = np.finfo(np.float32).eps.item()):
     x -= 1
     mask = x<0
     return((tf.exp(tf.clip_by_value(x, -1e10, 10))+offset)*tf.cast(mask, tf.float32) + (x+1)*(1-tf.cast(mask, tf.float32)))
-
 
 def find_loss_vae_unsup(proj_sample,
                         mask,
@@ -331,8 +328,6 @@ def find_loss_vae_unsup(proj_sample,
 
     return(loss_M_VAE, output_dist_vec, q, q_sample, kl_divergence, loglik, input_encode)
 
-
-
 def calculate_log_prob_M_given_R(output_sample, # reconstruction
                                  mask, # measurement parameters
                                  proj_sample, # measurement
@@ -366,7 +361,6 @@ def calculate_log_prob_M_given_R(output_sample, # reconstruction
     proj_sample_expand = tf.expand_dims(proj_sample,axis=-1)
     
     return(proj_dist.log_prob(proj_sample_expand))
-
 
 def plot(save_path, 
          vec,
@@ -428,7 +422,6 @@ def crop(img_2d, final_x, final_y, ignore_dim_0=False):
         return(img_2d[:,x//2 - final_x//2:x//2+final_x//2+remain_x, y//2-final_y//2:y//2+final_y//2+remain_y])
     else:
         return(img_2d[x//2 - final_x//2:x//2+final_x//2+remain_x, y//2-final_y//2:y//2+final_y//2+remain_y])
-
 
 def evaluate_sinogram(actual_sinogram, 
                       computed_sinogram, 
