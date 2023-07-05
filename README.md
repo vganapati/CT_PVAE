@@ -4,7 +4,8 @@
 ----
 ![Crates.io](https://img.shields.io/crates/l/Ap?color=black)
 
-`CT_PVAE` is a framework that uses self-supervised learning for computed tomography reconstruction from sparse sinograms (projection measurements). The framework is probabilisitic, inferring a prior distribution from sparse sinograms on a dataset of objects and calculating the posterior for the object reconstruction on each sinogram.
+`CT_PVAE` is a framework that uses self-supervised learning for computed tomography reconstruction from sparse sinograms (projection measurements). The framework is probabilisitic, inferring a prior distribution from sparse sinograms on a dataset of objects and calculating the posterior for the object reconstruction on each sinogram. The associated paper is available on [arXiv](
+https://doi.org/10.48550/arXiv.2211.00002) and was published in the [NeurIPS 2022 Machine Learning and the Physical Sciences Workshop](https://ml4physicalsciences.github.io/2022/).
 
 # Overview
 The figure below shows the overview of the end-to-end `CT_PVAE` pipeline.
@@ -21,6 +22,7 @@ The main algorithm comprising the `CT_PVAE` is inspired by the variational autoe
    1. [Creating Datasets](#Datasets)
    2. [Reproducing Toy Dataset Results](#ToyDataset)
    3. [Reproducing Foam Dataset Results](#FoamDataset)
+5. [Citation](#Citation)
    
 # Installation <a name="Installation"></a>
 
@@ -220,3 +222,17 @@ python bin/main_ct_vae.py --input_path dataset_foam --save_path foam_vae -b 10 -
 ```
 
 
+## Citation
+
+If you find our work useful in your research, please cite:
+
+```
+@misc{mendoza2022selfsupervised,
+      title={A Self-Supervised Approach to Reconstruction in Sparse X-Ray Computed Tomography}, 
+      author={Rey Mendoza and Minh Nguyen and Judith Weng Zhu and Vincent Dumont and Talita Perciano and Juliane Mueller and Vidya Ganapati},
+      year={2022},
+      eprint={2211.00002},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
